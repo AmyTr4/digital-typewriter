@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Daily Summary</title>
+    <link rel="preconnect" href="http://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <div class="bg-sparkles" aria-hidden="true"></div>
+    <div class="bg-decors" aria-hidden="true"></div>
+    <main class="stage">
+        <header class="intro">
+            <h1> Daily Summary</h1>
+        </header>
+
+        <div class="printer">
+            <img src="assets/printer.png" alt="printer" class="printer" />
+            <div class="printer-text">₊✩‧₊˚print me₊✩‧₊˚</div>
+            <div class="roller"></div>
+        </div>
+        <button id="printBtn">Print my day</button>
+        
+        <article class="receipt" id="receipt">
+            <span class="receipt-date" id="receiptDate"></span>
+            <h2>My Silly Day</h2>
+            <hr />
+            <section class="receipt-section receipt-section-events">
+                <h3>Events</h3>
+                <ul class="events">
+                    <li>Sample event . 10:00</li>
+                </ul>
+            </section>
+            <hr />
+            <section class="receipt-section receipt-section-todos">
+                <h3>To to list</h3>
+                <ul class="todos">
+                    <li>Sample task</li>
+                </ul>
+            </section>
+        </article>
+    </main>
+    
+    <script src="script.js" defer></script>
+</body>
+</html>
