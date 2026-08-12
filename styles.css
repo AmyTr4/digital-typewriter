@@ -1,0 +1,32 @@
+.receipt {
+  transform: translateY(100%); /* start hidden below */
+  opacity: 0;
+  transition: transform 3s ease, opacity 0.5s; /* animate over 3s */
+}
+.stage.is-printing .receipt {
+  transform: translateY(0);/* slide into view */
+  opacity: 1;
+}
+
+.roller {
+  position: absolute;
+  top: 0;
+  left: 40px;
+  width: 60px;
+  height: 60px;
+  background: url("assets/heart.png") center / contain no-repeat;
+}
+@keyframes rock { /* the roller rocking */
+  0%,100% { transform: rotate(0deg); }
+  50%     { transform: rotate(3deg); }
+}
+
+@keyframes roller-slide {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(280px); }
+}
+
+.stage.is-printing .roller {
+  animation: rock 0.4s ease-in-out infinite;
+  animation: roller-slide 2s ease-in-out infinite;
+}
