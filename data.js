@@ -4,6 +4,7 @@ const myEvents = [
   { title: 'Coffee with Riya', start: '14:00', end: '15:00', category: 'personal',
     link: 'https://meet.google.com/abc-defg-hij' },
   { title: 'Enterprise Computing', start: '16:00', end: '17:00', category: 'work' },
+  { title: 'Chemistry tutoring', start: '16:30', end: '19:00', category: 'work' },
 ];
 
 const myTasks = [

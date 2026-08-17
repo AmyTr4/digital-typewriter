@@ -1,3 +1,58 @@
+// definition
+function renderEvents(events) {
+  eventsList.innerHTML = '';                  // clear whatever's there
+
+  events.forEach((event) => {
+    const li = document.createElement('li');
+
+    const icon = document.createElement('span');
+    icon.className = `event-icon event-${event.category}`;
+    icon.textContent = event.category;
+
+    const label = document.createElement('span');
+    label.className = 'label';
+    label.textContent = event.title;
+
+    const time = document.createElement('span');
+    time.className = 'time';
+    time.textContent = `${event.start}–${event.end}`;
+
+    li.append(icon, label, time);
+
+    if (event.link) {                          // only if this event has one
+      const link = document.createElement('a');
+      link.href = event.link;
+      link.textContent = 'link';
+      link.target = '_blank';
+      li.append(link);
+    }
+
+    eventsList.append(li);
+  });
+}
+
+function renderTasks(tasks) {
+  todosList.innerHTML = '';
+
+  tasks.forEach((task) => {
+    const li = document.createElement('li');
+    li.className = 'todo';
+
+    const icon = document.createElement('span');
+    icon.className = `todo-icon todo-${task.category}`;
+    icon.textContent = task.category;
+
+    const label = document.createElement('span');
+    label.className = 'label';
+    label.textContent = task.title;
+
+    li.append(icon, label);
+    todosList.append(li);
+  });
+}
+
+
+
 // receipt date stamp
 const today = new Date ();
 receiptDate.textContent = `${today.getMonth() + 1}/${today.getDate()}/${today.getFullYear()}`;
@@ -28,10 +83,15 @@ function burstStars(x, y) {
   }
 }
 
-document.querySelectorAll('.todos .todo').forEach((todo) => {
-  todo.addEventListener('click', (e) => {
-    const willBeDone = !todo.classList.contains('done');
-    todo.classList.toggle('done');
-    if (willBeDone) burstStars(e.clientX, e.clientY);
-  });
+todosList.addEventListener('click', (e) => {
+  const todo = e.target.closest('.todo');
+  if (!todo) return;
+
+  const willBeDone = !todo.classList.contains('done');
+  todo.classList.toggle('done');
+  if (willBeDone) burstStars(e.clientX, e.clientY);
 });
+
+// call
+renderEvents(myEvents);
+renderTasks(myTasks);

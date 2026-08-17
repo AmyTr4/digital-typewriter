@@ -57,7 +57,7 @@ setTimeout(() => {
 }, 2000);
 
 // printer resting / print me text
-const eventCount = document.querySelectorAll('.events li').length;
+const eventCount = myEvents.length;
 const reactionFrame = eventCount > 3 ? '૮(˶ㅠ︿ㅠ)ა ' : eventCount < 3 ? '( ˶ˆᗜˆ˵ )' : null;
 const RESTING_FRAMES = ['₊✩‧₊˚print me₊✩‧₊˚', '₊˚₊✩‧print me₊˚₊✩‧'];
 if (reactionFrame) RESTING_FRAMES.push(reactionFrame);
